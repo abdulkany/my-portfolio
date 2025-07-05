@@ -3,227 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Abdullahi's Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <title>Abdullahi – Frontend Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    /* Reset & Root Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --main-bg-color: #f4f4f9;
-      --primary-color: #1a1a1a;
-      --secondary-color: #555;
-      --accent-color: #6c63ff;
-      --light-gray: #e0e0e0;
-      --dark-gray: #333;
-      --button-hover-color: #5a52e0;
-      --font-family: 'Arial', sans-serif;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: var(--font-family);
-      background-color: var(--main-bg-color);
-      color: var(--primary-color);
-      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9fb;
+      color: #1e1e1e;
     }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; border-radius: 12px; }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* Header */
     header {
-      position: fixed;
+      background: #fff;
+      padding: 20px 5%;
+      position: sticky;
       top: 0;
-      width: 100%;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 5%;
-      background-color: #fff;
-      border-bottom: 1px solid var(--light-gray);
-      z-index: 1000;
     }
-
     .logo {
       font-weight: bold;
       font-size: 22px;
-      color: var(--accent-color);
+      color: #6c63ff;
     }
-
     nav a {
       margin-left: 20px;
       font-size: 16px;
-      color: var(--secondary-color);
-      transition: color 0.3s;
+      color: #555;
     }
+    nav a:hover { color: #6c63ff; }
 
-    nav a:hover {
-      color: var(--accent-color);
-    }
-
-    /* Section Styling */
-    section {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 60px 5% 40px;
-      text-align: center;
-    }
-
-    /* Hero Section */
     .hero {
-      background: var(--accent-color);
+      background: linear-gradient(to right, #6c63ff, #5851db);
       color: #fff;
+      text-align: center;
+      padding: 100px 20px;
     }
-
     .hero img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
+      width: 140px;
+      height: 140px;
       object-fit: cover;
+      border-radius: 50%;
       margin-bottom: 20px;
       transition: transform 0.3s;
     }
-
-    .hero img:hover {
-      transform: scale(1.1);
-    }
-
+    .hero img:hover { transform: scale(1.1); }
     .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    .hero button {
-      padding: 12px 24px;
-      font-size: 16px;
-      background-color: #fff;
-      color: var(--accent-color);
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .hero button:hover {
-      background-color: var(--button-hover-color);
-      transform: translateY(-3px);
-    }
-
-    /* Portfolio Section */
-    #portfolio {
-      background-color: #fff;
-    }
-
-    #portfolio h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-
-    .projects {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .project-card {
-      width: 300px;
-      background-color: #f8f8f8;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-    }
-
-    .project-card img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-
-    .project-card h3 {
+      font-size: 40px;
       margin-bottom: 10px;
-      font-size: 20px;
-      color: var(--primary-color);
     }
-
-    .project-card p {
-      color: var(--secondary-color);
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
     }
-
-    /* About */
-    #about {
-      background-color: var(--light-gray);
-    }
-
-    /* Contact */
-    #contact {
-      background-color: #fff;
-    }
-
-    .contact-btn {
-      margin-top: 20px;
+    .btn {
+      background: #fff;
+      color: #6c63ff;
       padding: 12px 24px;
-      font-size: 16px;
-      background-color: var(--accent-color);
-      color: #fff;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-weight: 600;
       transition: all 0.3s;
       display: inline-block;
     }
-
-    .contact-btn:hover {
-      background-color: var(--button-hover-color);
-      transform: translateY(-3px);
+    .btn:hover {
+      background: #f4f4ff;
+      transform: translateY(-2px);
     }
 
-    /* Footer */
-    footer {
-      padding: 20px 5%;
+    section { padding: 80px 5%; }
+
+    .portfolio h2, .about h2, .contact h2 {
       text-align: center;
-      background-color: #fff;
-      border-top: 1px solid var(--light-gray);
+      font-size: 32px;
+      margin-bottom: 40px;
     }
 
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    .project-card h3 {
+      font-size: 18px;
+      margin-top: 15px;
+    }
+    .project-card p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 17px;
+      color: #444;
+      text-align: center;
+    }
+
+    .contact {
+      text-align: center;
+    }
+    .contact p {
+      font-size: 17px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 5%;
+      background: #fff;
+      border-top: 1px solid #eee;
+    }
     .social-links a {
-      margin: 0 10px;
-      color: var(--secondary-color);
       font-size: 20px;
-      transition: color 0.3s;
+      margin: 0 10px;
+      color: #666;
+      transition: color 0.3s ease;
     }
-
     .social-links a:hover {
-      color: var(--accent-color);
+      color: #6c63ff;
+    }
+    footer p {
+      font-size: 14px;
+      color: #999;
+      margin-top: 10px;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      .projects {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      nav a {
-        margin-left: 10px;
-      }
+      .hero h1 { font-size: 30px; }
+      nav a { font-size: 14px; margin-left: 12px; }
     }
   </style>
 </head>
@@ -231,65 +157,73 @@
 
   <!-- Header -->
   <header>
-    <div class="logo">ABDULLAHI</div>
+    <div class="logo">Abdullahi</div>
     <nav>
       <a href="#hero">Home</a>
-      <a href="#portfolio">Portfolio</a>
+      <a href="#portfolio">Projects</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <img src="./abdala.png" alt="Portrait of Abdullahi" />
-    <h1>I'm Abdullahi, Frontend Developer</h1>
-    <button onclick="location.href='#contact'">HIRE ME</button>
+  <section class="hero" id="hero">
+    <img src="./abdala.png" alt="Abdullahi" />
+    <h1>I'm Abdullahi</h1>
+    <p>Frontend Developer crafting clean and interactive websites.</p>
+    <a href="#contact" class="btn">Hire Me</a>
   </section>
 
   <!-- Portfolio -->
-  <section id="portfolio">
+  <section id="portfolio" class="portfolio">
     <h2>My Projects</h2>
     <div class="projects">
+      <!-- Project 1 -->
       <div class="project-card">
-        <img src="./curuba hotel.png" alt="Curuba Hotel Website" />
-        <h3><a href="https://abdulkany.github.io/Curubahotel/" target="_blank" rel="noopener noreferrer">Project 1</a></h3>
-        <p>Curuba Hotel website</p>
+        <img src="./curuba hotel.png" alt="Curuba Hotel" />
+        <h3><a href="https://abdulkany.github.io/Curubahotel/" target="_blank">Curuba Hotel</a></h3>
+        <p>Modern hotel website with clean layout and responsive design.</p>
       </div>
+      <!-- Project 2 -->
       <div class="project-card">
-        <img src="./Portfolio website.png" alt="Portfolio Project" />
-        <h3>Project 2</h3>
-        <p>A well structured portfolio</p>
+        <img src="./Portfolio website.png" alt="Portfolio Website" />
+        <h3>Portfolio Website</h3>
+        <p>Personal site showcasing frontend projects and skills.</p>
       </div>
+      <!-- Project 3 -->
       <div class="project-card">
-        <img src="./rayan.png" alt="Rayan Thermal Paper" />
-        <h3>Project 3</h3>
-        <p>Rayan Thermal Paper Website</p>
+        <img src="WhatsApp Image 2025-07-05 at 15.42.06.jpeg" alt="Rayan Thermal Paper" />
+        <h3>Rayan Thermal Paper</h3>
+        <p>Business site with a professional look for product display.</p>
       </div>
     </div>
   </section>
 
   <!-- About -->
-  <section id="about">
+  <section class="about" id="about">
     <h2>About Me</h2>
-    <p>Hello! I'm Abdullahi, a passionate frontend developer with a knack for creating beautiful and functional websites. I enjoy working with the latest technologies to bring ideas to life.</p>
+    <p>
+      I'm a frontend developer focused on building responsive, user-friendly websites.
+      I enjoy turning complex problems into simple, beautiful interfaces.
+    </p>
   </section>
 
   <!-- Contact -->
-  <section id="contact">
+  <section class="contact" id="contact">
     <h2>Contact Me</h2>
-    <p>I'm open to collaborations and freelance opportunities. Let's build something great together!</p>
-    <a href="mailto:abdullahikanyare004@gmail.com" class="contact-btn">Email Me</a>
+    <p>Have a project or idea? I'm open to freelance and collaboration.</p>
+    <a href="mailto:abdullahikanyare004@gmail.com" class="btn">Email Me</a>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="social-links">
-      
-      <a href="https://github.com/abdullahi" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://wa.me/254726970247" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://twitter.com/abdullahi"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com/in/abdullahi"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/abdullahi"><i class="fab fa-github"></i></a>
+      <a href="https://wa.me/254726970247"><i class="fab fa-whatsapp"></i></a>
     </div>
-    &copy; 2024 Abdullahi. All rights reserved.
+    <p>&copy; 2025 Abdullahi. All rights reserved.</p>
   </footer>
 
 </body>
