@@ -2,229 +2,201 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Abdullahi – Frontend Developer</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abdullahi – Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9fb;
-      color: #1e1e1e;
+      font-family: 'Poppins', sans-serif;
+      background: #f4f6f8;
+      color: #222;
+      line-height: 1.6;
     }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; border-radius: 12px; }
-
+    a {
+      color: #6c63ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
     header {
-      background: #fff;
-      padding: 20px 5%;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-weight: bold;
-      font-size: 22px;
-      color: #6c63ff;
-    }
-    nav a {
-      margin-left: 20px;
-      font-size: 16px;
-      color: #555;
-    }
-    nav a:hover { color: #6c63ff; }
-
-    .hero {
-      background: linear-gradient(to right, #6c63ff, #5851db);
-      color: #fff;
+      background: #6c63ff;
+      color: white;
+      padding: 30px 20px;
       text-align: center;
-      padding: 100px 20px;
-    }
-    .hero img {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 20px;
-      transition: transform 0.3s;
-    }
-    .hero img:hover { transform: scale(1.1); }
-    .hero h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-    .btn {
-      background: #fff;
-      color: #6c63ff;
-      padding: 12px 24px;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: all 0.3s;
-      display: inline-block;
-    }
-    .btn:hover {
-      background: #f4f4ff;
-      transform: translateY(-2px);
-    }
-
-    section { padding: 80px 5%; }
-
-    .portfolio h2, .about h2, .contact h2 {
-      text-align: center;
-      font-size: 32px;
       margin-bottom: 40px;
+      border-radius: 8px;
     }
-
-    .projects {
+    header h1 {
+      font-weight: 600;
+      font-size: 2.8rem;
+    }
+    header p {
+      margin-top: 8px;
+      font-weight: 300;
+      font-size: 1.2rem;
+    }
+    section.portfolio {
+      margin-bottom: 60px;
+    }
+    section.portfolio h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: #333;
+    }
+    .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
     }
-
     .project-card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
     }
     .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
     }
-    .project-card h3 {
-      font-size: 18px;
-      margin-top: 15px;
+    .project-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
     }
-    .project-card p {
-      font-size: 15px;
-      color: #555;
+    .project-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-
-    .about p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 17px;
-      color: #444;
-      text-align: center;
-    }
-
-    .contact {
-      text-align: center;
-    }
-    .contact p {
-      font-size: 17px;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 5%;
-      background: #fff;
-      border-top: 1px solid #eee;
-    }
-    .social-links a {
-      font-size: 20px;
-      margin: 0 10px;
-      color: #666;
-      transition: color 0.3s ease;
-    }
-    .social-links a:hover {
+    .project-title {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      font-weight: 600;
       color: #6c63ff;
     }
-    footer p {
-      font-size: 14px;
-      color: #999;
-      margin-top: 10px;
+    .project-description {
+      flex-grow: 1;
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 18px;
+    }
+    .project-tech {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #888;
+      margin-bottom: 15px;
+    }
+    .project-links a {
+      font-weight: 600;
+      padding: 10px 15px;
+      background: #6c63ff;
+      color: white;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+      display: inline-block;
+      margin-right: 12px;
+    }
+    .project-links a:hover {
+      background: #5548c8;
     }
 
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 30px; }
-      nav a { font-size: 14px; margin-left: 12px; }
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      section.portfolio h2 {
+        font-size: 2rem;
+      }
+      .project-image {
+        height: 150px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <div class="logo">Abdullahi</div>
-    <nav>
-      <a href="#hero">Home</a>
-      <a href="#portfolio">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1>Abdullahi's Portfolio</h1>
+    <p>Crafting interactive, responsive, and accessible web experiences</p>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <img src="./abdala.png" alt="Abdullahi" />
-    <h1>I'm Abdullahi</h1>
-    <p>Frontend Developer crafting clean and interactive websites.</p>
-    <a href="#contact" class="btn">Hire Me</a>
-  </section>
-
-  <!-- Portfolio -->
-  <section id="portfolio" class="portfolio">
+  <section class="portfolio container" id="portfolio">
     <h2>My Projects</h2>
-    <div class="projects">
+    <div class="projects-grid">
+
       <!-- Project 1 -->
       <div class="project-card">
-        <img src="./curuba hotel.png" alt="Curuba Hotel" />
-        <h3><a href="https://abdulkany.github.io/Curubahotel/" target="_blank">Curuba Hotel</a></h3>
-        <p>Modern hotel website with clean layout and responsive design.</p>
+        <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=800&q=80" alt="Curuba Hotel Website" class="project-image" />
+        <div class="project-content">
+          <h3 class="project-title">Curuba Hotel Website</h3>
+          <p class="project-description">
+            Developed a modern, fully responsive hotel website using HTML5, CSS3, and JavaScript.
+            Implemented smooth animations and a clean UI to improve user experience.
+            Integrated a booking form with validation to increase customer engagement.
+          </p>
+          <p class="project-tech">Technologies: HTML5, CSS3, JavaScript</p>
+          <div class="project-links">
+            <a href="https://abdulkany.github.io/Curubahotel/" target="_blank" rel="noopener noreferrer">View Live</a>
+          </div>
+        </div>
       </div>
+
       <!-- Project 2 -->
       <div class="project-card">
-        <img src="./Portfolio website.png" alt="Portfolio Website" />
-        <h3>Portfolio Website</h3>
-        <p>Personal site showcasing frontend projects and skills.</p>
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Portfolio Website" class="project-image" />
+        <div class="project-content">
+          <h3 class="project-title">Personal Portfolio Website</h3>
+          <p class="project-description">
+            Designed and built a professional portfolio website showcasing frontend skills and projects.
+            Focused on accessibility and performance, with semantic HTML and optimized images.
+            Used CSS Grid and Flexbox to create a clean and flexible layout.
+          </p>
+          <p class="project-tech">Technologies: HTML5, CSS3 (Grid & Flexbox), SEO best practices</p>
+          <div class="project-links">
+            <a href="#" aria-disabled="true" style="background: #ccc; pointer-events: none;">Coming Soon</a>
+          </div>
+        </div>
       </div>
+
       <!-- Project 3 -->
       <div class="project-card">
-        <img src="WhatsApp Image 2025-07-05 at 15.42.06.jpeg" alt="Rayan Thermal Paper" />
-        <h3>Rayan Thermal Paper</h3>
-        <p>Business site with a professional look for product display.</p>
+        <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=800&q=80" alt="Rayan Thermal Paper" class="project-image" />
+        <div class="project-content">
+          <h3 class="project-title">Rayan Thermal Paper Business Site</h3>
+          <p class="project-description">
+            Created a professional business website focused on product display and brand identity.
+            Implemented responsive design to ensure a seamless experience on all devices.
+            Developed interactive elements using JavaScript to enhance user engagement.
+          </p>
+          <p class="project-tech">Technologies: HTML5, CSS3, JavaScript</p>
+          <div class="project-links">
+            <a href="#" aria-disabled="true" style="background: #ccc; pointer-events: none;">Coming Soon</a>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
-
-  <!-- About -->
-  <section class="about" id="about">
-    <h2>About Me</h2>
-    <p>
-      I'm a frontend developer focused on building responsive, user-friendly websites.
-      I enjoy turning complex problems into simple, beautiful interfaces.
-    </p>
-  </section>
-
-  <!-- Contact -->
-  <section class="contact" id="contact">
-    <h2>Contact Me</h2>
-    <p>Have a project or idea? I'm open to freelance and collaboration.</p>
-    <a href="mailto:abdullahikanyare004@gmail.com" class="btn">Email Me</a>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="social-links">
-      <a href="https://twitter.com/abdullahi"><i class="fab fa-twitter"></i></a>
-      <a href="https://linkedin.com/in/abdullahi"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/abdullahi"><i class="fab fa-github"></i></a>
-      <a href="https://wa.me/254726970247"><i class="fab fa-whatsapp"></i></a>
-    </div>
-    <p>&copy; 2025 Abdullahi. All rights reserved.</p>
-  </footer>
 
 </body>
 </html>
